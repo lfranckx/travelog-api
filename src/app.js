@@ -13,6 +13,7 @@ const morganOption = (NODE_ENV === 'production')
 const errorHandler = require('./errorHandler');
 const authRouter = require('./auth/auth-router');
 const uploadRouter = require('./upload/upload-router');
+const articlesRouter = require('./articles/articles-router');
 
 app.use(morgan(morganOption));
 app.use(helmet());
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRouter);
 app.use('/api/upload', uploadRouter);
+app.use('/api/articles', articlesRouter);
 
 app.use(errorHandler);
 
