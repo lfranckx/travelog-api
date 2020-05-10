@@ -11,7 +11,7 @@ const s3 = new aws.S3({
     bucket: config.bucket
 });
 
-const upload = multer ({
+const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: config.bucket,
