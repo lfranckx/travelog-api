@@ -40,7 +40,7 @@ const ArticlesService = {
     },
     serializeArticle(article) {
         const articleTree = new Treeize();
-        const articleData = articleTree.grow([tree]).getData()[0];
+        const articleData = articleTree.grow([article]).getData()[0];
 
         return {
             id: articleData.id,

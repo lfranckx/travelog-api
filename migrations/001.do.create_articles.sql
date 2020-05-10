@@ -6,6 +6,6 @@ CREATE TABLE articles (
     author TEXT NOT NULL,
     username TEXT NOT NULL UNIQUE,
     image_url TEXT,
-    date_created TIMESTAMP NOT NULL DEFAULT now(),
+    date TIMESTAMP NOT NULL DEFAULT now(),
     date_modified TIMESTAMP
 );
