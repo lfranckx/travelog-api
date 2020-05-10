@@ -8,7 +8,7 @@ const articlesRouter = express.Router();
 
 articlesRouter
     .route('/')
-    .get(requireAuth, (req, res, next) => {
+    .get((req, res, next) => {
         ArticlesService.getAllArticles(req.app.get('db'))
             .then(articles => {
                 res.json(ArticlesService.serializeArticles(articles));
