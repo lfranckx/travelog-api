@@ -2,6 +2,7 @@ CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
     text TEXT NOT NULL,
     date_created TIMESTAMP DEFAULT now() NOT NULL,
+    date_modified TIMESTAMP,
     article_id INTEGER
         REFERENCES articles(id) ON DELETE CASCADE NOT NULL,
     user_id INTEGER

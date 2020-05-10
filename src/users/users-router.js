@@ -7,7 +7,7 @@ const { requireAuth } = require('../middleware/jwt-auth');
 
 usersRouter
     .post('/', jsonParser, (req, res, next) =>  {
-        const { email, username, password, first_name, last_name } = req.body
+        const { email, username, password, first_name, last_name } = req.body;
         for (const field of ['email', 'username', 'password', 'first_name', 'last_name'])
             if(!req.body[field])
             return res.status(400).json({

@@ -4,7 +4,8 @@ CREATE TABLE articles (
     description TEXT,
     body TEXT NOT NULL,
     author TEXT NOT NULL,
-    date TIMESTAMP DEFAULT now() NOT NULL,
     username TEXT NOT NULL UNIQUE,
-    image_url TEXT
+    image_url TEXT,
+    date_created TIMESTAMP NOT NULL DEFAULT now(),
+    date_modified TIMESTAMP
 );

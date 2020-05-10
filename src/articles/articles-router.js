@@ -16,9 +16,9 @@ articlesRouter
             .catch(next);
     })
     .post(requireAuth, jsonParser, (req, res, next) => {
-        const { title, description, body, author, date, username, image_url } = req.body;
-        const newArticle = { title, description, body, author, date, username, image_url };
-        newArtice.user_id = req.user.id;
+        const { title, description, body, author, username, image_url } = req.body;
+        const newArticle = { title, description, body, author, username, image_url };
+        newArticle.user_id = req.user.id;
 
         for (const [key, value] of Object.entries(newArticle))
             if (value == null)
@@ -46,13 +46,13 @@ articlesRouter
         res.json(ArticlesService.serializeArticle(res.article));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
-        const { id, user_id, title, description, body, author, date, username, image_url } = req.body;
-        const articleToUpdate = { id, user_id, title, description, body, author, date, username, image_url };
+        const { id, user_id, title, description, body, author, username, image_url } = req.body;
+        const articleToUpdate = { id, user_id, title, description, body, author, username, image_url };
         const numberOfValues = Object.values(articleToUpdate).filter(Boolean).length;
         if (numberOfValues === 0)
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain id, user_id, title, description, body, author, date, username, or image_url`
+                    message: `Request body must contain id, user_id, title, description, body, author, username, or image_url`
                 }
             });
         
