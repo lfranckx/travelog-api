@@ -5,9 +5,10 @@ CREATE TABLE users (
     password TEXT NOT NULL,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
+    profile_image TEXT,
     date_created TIMESTAMP NOT NULL DEFAULT now(),
     date_modified TIMESTAMP
-)
+);
 
 ALTER TABLE articles
     ADD COLUMN
