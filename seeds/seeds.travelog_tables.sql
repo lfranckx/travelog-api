@@ -8,14 +8,14 @@ TRUNCATE
 
 INSERT INTO users (email, username, password, first_name, last_name, profile_image)
 VALUES
-    ('user1@email.com', 'user1', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Mike', 'Sherman', 'https://loremflickr.com/750/300/paris,girl/random=1'),
-    ('user2@email.com', 'user2', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Deb', 'Straus', 'https://loremflickr.com/750/300/paris,girl/random=2'),
-    ('user3@email.com', 'user3', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Joe', 'Perry', 'https://loremflickr.com/750/300/paris,girl/random=3'),
-    ('user4@email.com', 'user4', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Stan', 'Francisco', 'https://loremflickr.com/750/300/paris,girl/random=4'),
-    ('user5@email.com', 'user5', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Warm', 'Milk', 'https://loremflickr.com/750/300/paris,girl/random=5');
+    ('user1@email.com', 'user1', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Mike', 'Sherman', 'https://loremflickr.com/750/300/person?random=1'),
+    ('user2@email.com', 'user2', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Deb', 'Straus', 'https://loremflickr.com/750/300/person?random=2'),
+    ('user3@email.com', 'user3', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Joe', 'Perry', 'https://loremflickr.com/750/300/person?random=3'),
+    ('user4@email.com', 'user4', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Stan', 'Francisco', 'https://loremflickr.com/750/300/person?random=4'),
+    ('user5@email.com', 'user5', '$2a$10$yivuED9JkAt3vWs4NYmIbuCZPq86Oylh8NaiX4FqLoFXVfq9kBENe', 'Warm', 'Milk', 'https://loremflickr.com/750/300/person?random=5');
 
 
-INSERT INTO articles (title, description, body, author, username, image_url, user_id)
+INSERT INTO articles (title, description, body, author, username, image_url, profile_image, user_id)
 VALUES
     (
         'Sample Article 1', 
@@ -24,6 +24,7 @@ VALUES
         'Mike Sherman',
         'user1',
         'https://loremflickr.com/750/300/landscape?random=1',
+        'https://loremflickr.com/750/300/person?random=1',
         1
     ),
     (
@@ -33,6 +34,7 @@ VALUES
         'Deb Straus',
         'user2',
         'https://loremflickr.com/750/300/landscape?random=2',
+        'https://loremflickr.com/750/300/person?random=2',
         2
     ),
     (
@@ -42,6 +44,7 @@ VALUES
         'Joe Perry',
         'user3',
         'https://loremflickr.com/750/300/landscape?random=3',
+        'https://loremflickr.com/750/300/person?random=1',
         3
     ),
     (
@@ -51,6 +54,7 @@ VALUES
         'Stan Francisco',
         'user4',
         'https://loremflickr.com/750/300/landscape?random=4',
+        'https://loremflickr.com/750/300/person?random=4',
         4
     ),
     (
@@ -60,6 +64,7 @@ VALUES
         'Warm Milk',
         'user5',
         'https://loremflickr.com/750/300/landscape?random=5',
+        'https://loremflickr.com/750/300/person?random=5',
         5
     );
 
