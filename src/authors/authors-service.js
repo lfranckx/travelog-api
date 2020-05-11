@@ -9,7 +9,7 @@ const AuthorsService = {
         return knex
             .from('authors')
             .select('*')
-            .where('id', id)
+            .where('author_id', id)
             .first();
     },
     insertAuthor(db, newAuthor) {

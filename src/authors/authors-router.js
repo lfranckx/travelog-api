@@ -76,6 +76,8 @@ authorsRouter
     });
 
 async function checkAuthorExists(req, res, next) {
+    console.log(req.params);
+    
     try {
         const author = await AuthorsService.getById(
             req.app.get('db'),
