@@ -64,6 +64,7 @@ usersRouter
 // async/await syntax for promises
 async function checkUsernameExists(req, res, next) {
     try {
+        console.log('req.params', req.params);
         const user = await UsersService.getByUsername(
             req.app.get('db'),
             req.params.username

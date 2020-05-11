@@ -55,7 +55,7 @@ const UsersService = {
             id: userData.id,
             email: xss(userData.email),
             username: xss(userData.username),
-            user_password: xss(userData.user_password),
+            password: xss(userData.password),
             first_name: xss(userData.first_name),
             last_name: xss(userData.last_name),
             date_created: new Date(userData.date_created)
