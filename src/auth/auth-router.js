@@ -13,7 +13,7 @@ authRouter
         for (const [key, value] of Object.entries(loginUser))
             if (value == null)
                 return res.status(400).json({
-                    error: `Missing '${key} in request body`
+                    error: `Missing ${key} in request body`
                 });
         AuthService.getUserWithUsername(
             req.app.get('db'),
@@ -51,4 +51,4 @@ authRouter
         });
     });
 
-module.exports = authRouter
+module.exports = authRouter;

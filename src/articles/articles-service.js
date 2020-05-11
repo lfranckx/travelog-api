@@ -16,7 +16,7 @@ const ArticlesService = {
         return knex
             .select('*')
             .from('articles')
-            .where('parent_id', user_id);
+            .where('user_id', user_id);
     },
     insertArticle(db, newArticle) {
         return db
@@ -51,7 +51,8 @@ const ArticlesService = {
             author: xss(articleData.author),
             date: xss(articleData.date),
             username: xss(articleData.username),
-            image_url: xss(articleData.image_url)
+            image_url: xss(articleData.image_url),
+            profile_image: xss(articleData.profile_image)
         };
     }
 };

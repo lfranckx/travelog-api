@@ -76,18 +76,18 @@ articlesRouter
     });
 
 articlesRouter
-    .route('/user/id')
-    .all(requireAuth)
+    .route('/user/:user_id')
     .all(checkArticlesExists)
-    .get(requireAuth, (req, res) => {
-        res.json(ArticlesService.serializeArticles(res.article));
+    .get((req, res) => {
+        res.json(ArticlesService.serializeArticles(res.articles));
     });
 
 async function checkArticlesExists(req, res, next) {
     try {
+        console.log(req.params);
         const articles = await ArticlesService.getByUserId(
             req.app.get('db'),
-            req.user.id
+            req.params.user_id
         );
         if (!articles)
             return res.status(404).json({
@@ -102,7 +102,7 @@ async function checkArticlesExists(req, res, next) {
 }
 
 async function checkArticleExists(req, res, next) {
-    try {
+    try {        
         const article = await ArticlesService.getById(
             req.app.get('db'),
             req.params.article_id

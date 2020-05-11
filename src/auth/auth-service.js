@@ -24,7 +24,7 @@ const AuthService = {
         });
     },
     parseBasicToken(token) {
-        return Buffer  
+        return Buffer
             .from(token, 'base64')
             .toString()
             .split(':');
