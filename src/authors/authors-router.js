@@ -55,25 +55,25 @@ authorsRouter
     });
 
 authorsRouter
-    .route('/:author_id')
+    .route('/:user_id')
     .all(checkAuthorExists)
     .get((req, res) => {
         res.json(AuthorsService.serializeAuthor(res.author));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
-        const { name, about, profile_image, author_id } = req.body;
-        const authorToUpdate = { name, about, profile_image, author_id };
+        const { name, about, username, profile_image, user_id } = req.body;
+        const authorToUpdate = { name, about, username, profile_image, user_id };
         const numberOfValues = Object.values(authorToUpdate).filter(Boolean).length;
         if (numberOfValues === 0)
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain name, about, profile_image, or author_id`
+                    message: `Request body must contain name, about, username, profile_image, or user_id`
                 }
             });
 
         AuthorsService.updateAuthor(
             req.app.get('db'),
-            req.params.author_id,
+            req.params.user_id,
             authorToUpdate
         )
         .then(numOfRowsAffected => {
@@ -84,7 +84,7 @@ authorsRouter
     .delete(requireAuth, jsonParser, (req, res, next) => {
         AuthorsService.deleteAuthor(
             req.app.get('db'),
-            req.params.author_id
+            req.params.user_id
         )
         .then(numRowsAffected => {
             res.status(204).end();
@@ -95,7 +95,7 @@ async function checkAuthorExists(req, res, next) {
     try {
         const author = await AuthorsService.getById(
             req.app.get('db'),
-            req.params.author_id
+            req.params.user_id
         );
         if (!author)
             return res.status(404).json({

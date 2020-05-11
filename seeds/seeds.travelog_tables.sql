@@ -68,7 +68,7 @@ VALUES
         5
     );
 
-INSERT INTO authors (name, about, username, profile_image, author_id)
+INSERT INTO authors (name, about, username, profile_image, user_id)
 VALUES
     (
         'Mike Sherman', 
