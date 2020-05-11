@@ -110,7 +110,7 @@ async function checkArticleExists(req, res, next) {
 
         if (!article)
             return res.status(404).json({
-                error: `article doesn't exist`
+                error: `Article doesn't exist`
             });
 
             res.article = article;

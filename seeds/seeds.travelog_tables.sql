@@ -63,32 +63,37 @@ VALUES
         5
     );
 
-INSERT INTO authors (name, about, profile_image)
+INSERT INTO authors (name, about, profile_image, author_id)
 VALUES
     (
         'Mike Sherman', 
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/paris,girl/random=1'
+        'https://loremflickr.com/750/300/paris,girl/random=1',
+        1
     ),
     (
         'Deb Straus',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/paris,girl/random=2'
+        'https://loremflickr.com/750/300/paris,girl/random=2',
+        2
     ),
     (
         'Joe Perry',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/paris,girl/random=3'
+        'https://loremflickr.com/750/300/paris,girl/random=3',
+        3
     ),
     (
         'Stan Francisco',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/paris,girl/random=4'
+        'https://loremflickr.com/750/300/paris,girl/random=4',
+        4
     ),
     (
         'Warm Milk',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/paris,girl/random=5'
+        'https://loremflickr.com/750/300/paris,girl/random=5',
+        5
     );
 
 COMMIT;
