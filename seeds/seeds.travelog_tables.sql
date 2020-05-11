@@ -63,4 +63,32 @@ VALUES
         5
     );
 
+INSERT INTO authors (name, about, profile_image)
+VALUES
+    (
+        'Mike Sherman', 
+        'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
+        'https://loremflickr.com/750/300/paris,girl/random=1'
+    ),
+    (
+        'Deb Straus',
+        'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
+        'https://loremflickr.com/750/300/paris,girl/random=2'
+    ),
+    (
+        'Joe Perry',
+        'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
+        'https://loremflickr.com/750/300/paris,girl/random=3'
+    ),
+    (
+        'Stan Francisco',
+        'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
+        'https://loremflickr.com/750/300/paris,girl/random=4'
+    ),
+    (
+        'Warm Milk',
+        'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
+        'https://loremflickr.com/750/300/paris,girl/random=5'
+    );
+
 COMMIT;

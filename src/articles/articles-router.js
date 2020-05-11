@@ -39,10 +39,9 @@ articlesRouter
     });
 
 articlesRouter
-    .route('/:id')
-    .all(requireAuth)
+    .route('/:article_id')
     .all(checkArticleExists)
-    .get(requireAuth, (req, res) => {
+    .get((req, res) => {
         res.json(ArticlesService.serializeArticle(res.article));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
@@ -106,7 +105,7 @@ async function checkArticleExists(req, res, next) {
     try {
         const article = await ArticlesService.getById(
             req.app.get('db'),
-            req.params.id
+            req.params.article_id
         );
 
         if (!article)
