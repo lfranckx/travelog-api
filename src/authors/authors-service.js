@@ -39,6 +39,7 @@ const AuthorsService = {
         return {
             name: xss(authorData.name),
             about: xss(authorData.about),
+            username: xss(authorData.username),
             profile_image: xss(authorData.profile_image),
             author_id: authorData.author_id
         };

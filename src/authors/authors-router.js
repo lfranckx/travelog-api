@@ -39,6 +39,22 @@ authorsRouter
     });
 
 authorsRouter
+    .route('/user/loggedin')
+    .all(requireAuth)
+    .get((req, res, next) => {
+        console.log('REQ.USER', req.user);
+        
+        AuthorsService.getById(
+            req.app.get('db'),
+            req.user.id
+        )
+        .then(author => {
+            res.json(AuthorsService.serializeAuthor(author));
+        })
+        .catch(next);
+    });
+
+authorsRouter
     .route('/:author_id')
     .all(checkAuthorExists)
     .get((req, res) => {
