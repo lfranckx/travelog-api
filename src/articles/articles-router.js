@@ -16,10 +16,11 @@ articlesRouter
             .catch(next);
     })
     .post(requireAuth, jsonParser, (req, res, next) => {
+        console.log('REQ.BODY', req.body);
         const { title, description, body, author, username, image_url } = req.body;
         const newArticle = { title, description, body, author, username, image_url };
         newArticle.user_id = req.user.id;
-
+        console.log('newArticle', newArticle);
         for (const [key, value] of Object.entries(newArticle))
             if (value == null)
                     return res.status(400).json({
