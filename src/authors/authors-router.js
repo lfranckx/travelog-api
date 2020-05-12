@@ -52,7 +52,7 @@ authorsRouter
     });
 
 authorsRouter
-    .route('/:user_id')
+    .route('/:username')
     .all(checkAuthorExists)
     .get((req, res) => {
         res.json(AuthorsService.serializeAuthor(res.author));
@@ -90,9 +90,9 @@ authorsRouter
 
 async function checkAuthorExists(req, res, next) {
     try {
-        const author = await AuthorsService.getById(
+        const author = await AuthorsService.getByUsername(
             req.app.get('db'),
-            req.params.user_id
+            req.params.uername
         );
         if (!author)
             return res.status(404).json({
