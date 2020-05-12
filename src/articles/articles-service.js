@@ -12,11 +12,11 @@ const ArticlesService = {
             .where('id', id)
             .first();
     },
-    getByUserId(knex, user_id) {
+    getByUsername(knex, username) {
         return knex
             .select('*')
             .from('articles')
-            .where('user_id', user_id);
+            .where('username', username);
     },
     insertArticle(db, newArticle) {
         return db

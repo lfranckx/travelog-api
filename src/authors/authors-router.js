@@ -92,7 +92,7 @@ async function checkAuthorExists(req, res, next) {
     try {
         const author = await AuthorsService.getByUsername(
             req.app.get('db'),
-            req.params.uername
+            req.params.username
         );
         if (!author)
             return res.status(404).json({

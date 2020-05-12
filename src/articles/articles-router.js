@@ -79,7 +79,7 @@ articlesRouter
     });
 
 articlesRouter
-    .route('/user/:user_id')
+    .route('/user/:username')
     .all(checkArticlesExists)
     .get((req, res) => {
         res.json(ArticlesService.serializeArticles(res.articles));
@@ -87,10 +87,9 @@ articlesRouter
 
 async function checkArticlesExists(req, res, next) {
     try {
-        console.log(req.params);
-        const articles = await ArticlesService.getByUserId(
+        const articles = await ArticlesService.getByUsername(
             req.app.get('db'),
-            req.params.user_id
+            req.params.username
         );
         if (!articles)
             return res.status(404).json({
