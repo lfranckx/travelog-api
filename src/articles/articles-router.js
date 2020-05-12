@@ -16,7 +16,6 @@ articlesRouter
             .catch(next);
     })
     .post(requireAuth, jsonParser, (req, res, next) => {
-        console.log('REQ.BODY', req.body);
         const { title, description, body, author, username, image_url } = req.body;
         const newArticle = { title, description, body, author, username, image_url };
         newArticle.user_id = req.user.id;
@@ -46,6 +45,9 @@ articlesRouter
         res.json(ArticlesService.serializeArticle(res.article));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
+        console.log('PATCH ARTICLES', req.body);
+        console.log('params.id', req.params.id);
+        
         const { id, user_id, title, description, body, author, username, image_url } = req.body;
         const articleToUpdate = { id, user_id, title, description, body, author, username, image_url };
         const numberOfValues = Object.values(articleToUpdate).filter(Boolean).length;
@@ -58,7 +60,7 @@ articlesRouter
         
         ArticlesService.updateArticle(
             req.app.get('db'),
-            req.params.id,
+            req.body.id,
             articleToUpdate
         )
         .then(numRowsAffected => {
