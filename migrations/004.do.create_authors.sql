@@ -1,9 +1,8 @@
 CREATE TABLE authors (
+    username TEXT NOT NULL UNIQUE,
     name TEXT NOT NULL,
     about TEXT,
-    username TEXT NOT NULL,
     profile_image TEXT,
     date_created TIMESTAMP NOT NULL DEFAULT now(),
-    date_modified TIMESTAMP,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
+    date_modified TIMESTAMP
 );

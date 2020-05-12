@@ -5,11 +5,11 @@ const AuthorsService = {
     getAllAuthors(knex) {
         return knex.select('*').from('authors');
     },
-    getById(knex, id) {
+    getByUsername(knex, username) {
         return knex
             .from('authors')
             .select('*')
-            .where('user_id', id)
+            .where('username', username)
             .first();
     },
     insertAuthor(db, newAuthor) {
@@ -19,14 +19,14 @@ const AuthorsService = {
                 .returning('*')
                 .then(([author]) => author);
     },
-    updateAuthor(knex, id, newAuthorFields) {
+    updateAuthor(knex, username, newAuthorFields) {
         return knex('authors')
-            .where({ id })
+            .where({ username })
             .update(newAuthorFields);
     },
-    deleteAuthor(knex, id) {
+    deleteAuthor(knex, username) {
         return knex('authors')
-        .where ({ id })
+        .where ({ username })
         .delete();
     },
     serializeAuthors(authors) {

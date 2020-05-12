@@ -68,42 +68,37 @@ VALUES
         5
     );
 
-INSERT INTO authors (name, about, username, profile_image, user_id)
+INSERT INTO authors (username, name, about, profile_image)
 VALUES
-    (
+    (   
+        'user1',
         'Mike Sherman', 
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'user1',
-        'https://loremflickr.com/750/300/person?random=1',
-        1
+        'https://loremflickr.com/750/300/person?random=1'
     ),
-    (
+    (   
+        'user2',
         'Deb Straus',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/person?random=2',
-        'user2',
-        2
+        'https://loremflickr.com/750/300/person?random=2'
     ),
     (
+        'user3',
         'Joe Perry',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/person?random=3',
-        'user3',
-        3
+        'https://loremflickr.com/750/300/person?random=3'
     ),
     (
+        'user4',
         'Stan Francisco',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/person?random=4',
-        'user4',
-        4
+        'https://loremflickr.com/750/300/person?random=4'
     ),
     (
+        'user5',
         'Warm Milk',
         'Donec finibus neque quis est molestie, id volutpat metus auctor. Aliquam augue ante, ultrices ac lacinia non, vulputate quis nisl. Nullam vitae tempus urna. Integer nec cursus elit.',
-        'https://loremflickr.com/750/300/person?random=5',
-        'user5',
-        5
+        'https://loremflickr.com/750/300/person?random=5'
     );
 
 COMMIT;

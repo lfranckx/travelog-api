@@ -15,10 +15,9 @@ authorsRouter
             })
             .catch(next);
     })
-    .post(requireAuth, jsonParser, (req, res, next) => {
-        const { name, about, profile_image } = req.body;
-        const newAuthor = { name, about, profile_image };
-        newAuthor.user_id = req.user.id;
+    .post(jsonParser, (req, res, next) => {
+        const { username, name, about, profile_image } = req.body;
+        const newAuthor = { username, name, about, profile_image };
 
         for (const [key, value] of Object.entries(newAuthor))
             if (value == null)
@@ -42,9 +41,9 @@ authorsRouter
     .route('/user/loggedin')
     .all(requireAuth)
     .get((req, res, next) => {        
-        AuthorsService.getById(
+        AuthorsService.getByUsername(
             req.app.get('db'),
-            req.user.id
+            req.user.username
         )
         .then(author => {
             res.json(AuthorsService.serializeAuthor(author));
@@ -59,19 +58,19 @@ authorsRouter
         res.json(AuthorsService.serializeAuthor(res.author));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
-        const { name, about, username, profile_image, user_id } = req.body;
-        const authorToUpdate = { name, about, username, profile_image, user_id };
+        const { username, name, about, profile_image } = req.body;
+        const authorToUpdate = { username, name, about, profile_image };
         const numberOfValues = Object.values(authorToUpdate).filter(Boolean).length;
         if (numberOfValues === 0)
             return res.status(400).json({
                 error: {
-                    message: `Request body must contain name, about, username, profile_image, or user_id`
+                    message: `Request body must contain username, name, about, or profile_image`
                 }
             });
 
         AuthorsService.updateAuthor(
             req.app.get('db'),
-            req.params.user_id,
+            req.params.username,
             authorToUpdate
         )
         .then(numOfRowsAffected => {
@@ -82,7 +81,7 @@ authorsRouter
     .delete(requireAuth, jsonParser, (req, res, next) => {
         AuthorsService.deleteAuthor(
             req.app.get('db'),
-            req.params.user_id
+            req.params.username
         )
         .then(numRowsAffected => {
             res.status(204).end();
