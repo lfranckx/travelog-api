@@ -58,6 +58,8 @@ authorsRouter
         res.json(AuthorsService.serializeAuthor(res.author));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
+        console.log('REQ.BODY', req.body);
+        
         const { username, name, about, profile_image } = req.body;
         const authorToUpdate = { username, name, about, profile_image };
         const numberOfValues = Object.values(authorToUpdate).filter(Boolean).length;
@@ -70,20 +72,20 @@ authorsRouter
 
         AuthorsService.updateAuthor(
             req.app.get('db'),
-            req.params.username,
+            req.body.username,
             authorToUpdate
         )
         .then(numOfRowsAffected => {
-            res.json(numRowsAffected).status(204).end();
+            res.json(numOfRowsAffected).status(204).end();
         })
         .catch(next);
     })
     .delete(requireAuth, jsonParser, (req, res, next) => {
         AuthorsService.deleteAuthor(
             req.app.get('db'),
-            req.params.username
+            req.body.username
         )
-        .then(numRowsAffected => {
+        .then(numOfRowsAffected => {
             res.status(204).end();
         });
     });

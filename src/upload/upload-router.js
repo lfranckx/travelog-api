@@ -8,8 +8,6 @@ const multipleUpload = require('./upload-multiple-service');
 uploadRouter
     .post('/', requireAuth, (req, res) => { 
         upload(req, res, (error) => {
-            console.log('REQ.FILE', req.file, 'REQ', req);
-            
             if(error) {
                 return res.status(400).json({ error: error });
             } 
