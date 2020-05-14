@@ -15,6 +15,7 @@ const uploadRouter = require('./upload/upload-router');
 const articlesRouter = require('./articles/articles-router');
 const usersRouter = require('./users/users-router');
 const authorsRouter = require('./authors/authors-router');
+const commentsRouter = require('./comments/comments-router');
 
 app.use(morgan(morganOption));
 app.use(helmet());
@@ -29,6 +30,7 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/articles', articlesRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/authors', authorsRouter);
+app.use('/api/comments', commentsRouter);
 
 app.use(errorHandler);
 
