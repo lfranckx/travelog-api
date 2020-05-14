@@ -31,7 +31,8 @@ const ArticlesService = {
             .update(newArticleFields);
     },
     deleteArticle(knex, id) {
-        return knex('articles')
+        return knex
+        .from('articles')
         .where ({ id })
         .delete();
     },

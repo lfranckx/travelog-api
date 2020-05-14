@@ -45,9 +45,6 @@ articlesRouter
         res.json(ArticlesService.serializeArticle(res.article));
     })
     .patch(requireAuth, jsonParser, (req, res, next) => {
-        console.log('PATCH ARTICLES', req.body);
-        console.log('params.id', req.params.id);
-        
         const { id, user_id, title, description, body, author, username, image_url } = req.body;
         const articleToUpdate = { id, user_id, title, description, body, author, username, image_url };
         const numberOfValues = Object.values(articleToUpdate).filter(Boolean).length;
@@ -69,9 +66,11 @@ articlesRouter
         .catch(next);
     })
     .delete(requireAuth, jsonParser, (req, res, next) => {
+        console.log('REQ.PARAMS', req.params);
+        
         ArticlesService.deleteArticle(
             req.app.get('db'),
-            req.params.id
+            req.params.article_id
         )
         .then(numRowsAffected => {
             res.status(204).end();

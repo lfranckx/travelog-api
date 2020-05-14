@@ -23,7 +23,7 @@ const multipleUploads = multer({
             cb(null, path.basename(file.originalname, path.extname(file.originalname)) + '-' + Date.now() + path.extname(file.originalname));
         }
     }),
-    limits:{ fileSize: 4000000 }, // 4 MB
+    limits:{ fileSize: 6000000 }, // 6 MB
     fileFilter: function( req, file, cb ) {
         checkFileType( file, cb );
     }
