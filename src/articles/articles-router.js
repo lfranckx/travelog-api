@@ -16,8 +16,8 @@ articlesRouter
             .catch(next);
     })
     .post(requireAuth, jsonParser, (req, res, next) => {
-        const { title, description, body, author, username, image_url } = req.body;
-        const newArticle = { title, description, body, author, username, image_url };
+        const { title, description, body, author, username, image_url, profile_image } = req.body;
+        const newArticle = { title, description, body, author, username, image_url, profile_image };
         newArticle.user_id = req.user.id;
         console.log('newArticle', newArticle);
         for (const [key, value] of Object.entries(newArticle))
