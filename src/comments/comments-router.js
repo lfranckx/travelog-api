@@ -20,7 +20,7 @@ commentsRouter
 
         newComment.user_id = req.user.id;
 
-        CommentsService.instertComment(
+        CommentsService.insertComment(
             req.app.get('db'),
             newComment
         )

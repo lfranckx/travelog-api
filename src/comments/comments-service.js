@@ -1,5 +1,4 @@
 const xss = require('xss');
-const Treeize = require('treeize');
 
 const CommentsService = {
     getById(knex, id) {
