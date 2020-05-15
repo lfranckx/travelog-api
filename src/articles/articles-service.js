@@ -74,6 +74,7 @@ const ArticlesService = {
             comment: xss(commentData.comment),
             username: xss(commentData.username),
             author_name: xss(commentData.author_name),
+            profile_image: xss(commentData.profile_image),
             article_id: commentData.article_id,
             date: commentData.date,
             user: commentData.user || {}

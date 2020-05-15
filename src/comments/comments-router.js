@@ -9,8 +9,8 @@ const jsonBodyParser = express.json();
 commentsRouter 
     .route('/')
     .post(requireAuth, jsonBodyParser, (req, res, next) => {
-        const { comment, username, author_name, article_id } = req.body;
-        const newComment = { comment, username, author_name, article_id };
+        const { comment, username, author_name, profile_image, article_id } = req.body;
+        const newComment = { comment, username, author_name, profile_image, article_id };
         
         for (const [key, value] of Object.entries(newComment))
             if (value == null)

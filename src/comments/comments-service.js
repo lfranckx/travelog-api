@@ -21,6 +21,7 @@ const CommentsService = {
             comment: xss(comment.comment),
             username: xss(comment.username),
             author_name: xss(comment.author_name),
+            profile_image: xss(comment.profile_image),
             article_id: comment.article_id,
             date: comment.date
         };

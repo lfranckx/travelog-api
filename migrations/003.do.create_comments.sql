@@ -3,6 +3,7 @@ CREATE TABLE comments (
     comment TEXT NOT NULL,
     username TEXT NOT NULL,
     author_name TEXT NOT NULL,
+    profile_image TEXT,
     date TIMESTAMP DEFAULT now() NOT NULL,
     article_id INTEGER
         REFERENCES articles(id) ON DELETE CASCADE NOT NULL
