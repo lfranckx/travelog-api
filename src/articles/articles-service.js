@@ -23,7 +23,7 @@ const ArticlesService = {
             .select('*')
             .from('comments')
             .where('article_id', article_id)
-    }
+    },
     insertArticle(db, newArticle) {
         return db
             .insert(newArticle)
