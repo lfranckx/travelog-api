@@ -22,7 +22,6 @@ const CommentsService = {
             username: xss(comment.username),
             author_name: xss(comment.author_name),
             article_id: comment.article_id,
-            user_id: comment.user_id,
             date: comment.date,
             user: comment.user || {}
         };

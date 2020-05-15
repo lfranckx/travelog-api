@@ -18,6 +18,12 @@ const ArticlesService = {
             .from('articles')
             .where('username', username);
     },
+    getCommentsForArticle(db, article_id) {
+        return knex
+            .select('*')
+            .from('comments')
+            .where('article_id', article_id)
+    }
     insertArticle(db, newArticle) {
         return db
             .insert(newArticle)

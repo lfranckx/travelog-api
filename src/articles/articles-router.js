@@ -6,8 +6,7 @@ const { requireAuth } = require('../middleware/jwt-auth');
 
 const articlesRouter = express.Router();
 
-articlesRouter
-    .route('/')
+articlesRouter.route('/')
     .get((req, res, next) => {
         ArticlesService.getAllArticles(req.app.get('db'))
             .then(articles => {
@@ -38,8 +37,7 @@ articlesRouter
         .catch(next);
     });
 
-articlesRouter
-    .route('/:article_id')
+articlesRouter.route('/:article_id')
     .all(checkArticleExists)
     .get((req, res) => {
         res.json(ArticlesService.serializeArticle(res.article));
@@ -77,8 +75,21 @@ articlesRouter
         });
     });
 
-articlesRouter
-    .route('/user/:username')
+articlesRouter.route('/:articl_id/comments')
+    .all(requireAuth)
+    .all(checkArticleExists)
+    .get((req, res, next) => {
+        ArticlesService.getCommentsForArticle(
+            req.app.get('db'),
+            req.params.article_id
+        )
+        .then(comments => {
+            res.json(ArticlesService.serializeArticleComments(comments))
+        })
+        .catch(next);
+    });
+
+articlesRouter.route('/user/:username')
     .all(checkArticlesExists)
     .get((req, res) => {
         res.json(ArticlesService.serializeArticles(res.articles));
