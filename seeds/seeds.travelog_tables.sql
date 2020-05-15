@@ -101,12 +101,12 @@ VALUES
         'https://loremflickr.com/750/300/person?random=5'
     );
 
-INSERT INTO comments (id, comment, username, author_name, article_id)
+INSERT INTO comments (comment, username, author_name, article_id)
 VALUES
-    (1, 'such a great article!', 'user5', 'Warm Milk', 1),
-    (2, 'loved the read!', 'user1', 'Mike Sherman', 2),
-    (3, 'Powerful', 'user4', 'Stan Francisco', 3),
-    (4, 'This reminds me of a similar experience I had', 'user3', 'Joe Perry', 4),
-    (5, 'Hey!', 'user2', 'Deb Straus', 5);
+    ('such a great article!', 'user5', 'Warm Milk', 1),
+    ('loved the read!', 'user1', 'Mike Sherman', 2),
+    ('Powerful', 'user4', 'Stan Francisco', 3),
+    ('This reminds me of a similar experience I had', 'user3', 'Joe Perry', 4),
+    ('Hey!', 'user2', 'Deb Straus', 5);
 
 COMMIT;
