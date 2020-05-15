@@ -75,8 +75,7 @@ articlesRouter.route('/:article_id')
         });
     });
 
-articlesRouter.route('/:articl_id/comments')
-    .all(requireAuth)
+articlesRouter.route('/:article_id/comments')
     .all(checkArticleExists)
     .get((req, res, next) => {
         ArticlesService.getCommentsForArticle(

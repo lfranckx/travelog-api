@@ -1,4 +1,5 @@
 const xss = require('xss');
+const Treeize = require('treeize');
 
 const CommentsService = {
     getById(knex, id) {
@@ -22,8 +23,7 @@ const CommentsService = {
             username: xss(comment.username),
             author_name: xss(comment.author_name),
             article_id: comment.article_id,
-            date: comment.date,
-            user: comment.user || {}
+            date: comment.date
         };
     }
 };

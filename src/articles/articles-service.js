@@ -18,7 +18,7 @@ const ArticlesService = {
             .from('articles')
             .where('username', username);
     },
-    getCommentsForArticle(db, article_id) {
+    getCommentsForArticle(knex, article_id) {
         return knex
             .select('*')
             .from('comments')
@@ -61,7 +61,24 @@ const ArticlesService = {
             image_url: xss(articleData.image_url),
             profile_image: xss(articleData.profile_image)
         };
-    }
+    },
+    serializeArticleComments(comments) {
+        return comments.map(this.serializeArticleComment);
+    },
+    serializeArticleComment(comment) {
+        const commentTree = new Treeize();
+        const commentData = commentTree.grow([ comment ]).getData()[0]
+
+        return {
+            id: commentData.id,
+            comment: xss(commentData.comment),
+            username: xss(commentData.username),
+            author_name: xss(commentData.author_name),
+            article_id: commentData.article_id,
+            date: commentData.date,
+            user: commentData.user || {}
+        }
+    },
 };
 
 module.exports = ArticlesService;
