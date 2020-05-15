@@ -11,10 +11,10 @@ const CommentsService = {
     },
     insertComment(db, newComment) {
         return db
-            .insert(newArticle)
-            .into('articles')
+            .insert(newComment)
+            .into('comments')
             .returning('*')
-            .then(([article]) => article);
+            .then(([comment]) => comment);
     },
     serializeComment(comment) {
         return {
