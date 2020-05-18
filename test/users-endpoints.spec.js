@@ -6,7 +6,7 @@ const helpers = require('./test-helpers');
 describe('Users Endpoints', function() {
   let db;
 
-  const { testUsers } = helpers.makeBabiesFixtures();
+  const { testUsers } = helpers.makeUsersFixtures();
   const testUser = testUsers[0];
 
   before('make knex instance', () => {
@@ -30,15 +30,18 @@ describe('Users Endpoints', function() {
           db,
           testUsers,
         )
-      )
+      );
 
-      const requiredFields = ['username', 'password', 'email']
+      const requiredFields = ['username', 'password', ]
 
       requiredFields.forEach(field => {
         const registerAttemptBody = {
+          email: 'test email',
           username: 'test username',
           password: 'test password',
-          email: 'test email',
+          first_name: 'first',
+          last_name: 'last',
+          profile_image: 'profile_image'
         };
 
         it(`responds with 400 required error when '${field}' is missing`, () => {
@@ -57,19 +60,19 @@ describe('Users Endpoints', function() {
                 username: testUser.username,
                 password: '11AAaa!!',
                 email: 'test email',
-            }
+            };
             return supertest(app)
                 .post('/api/users')
                 .send(duplicateUser)
                 .expect(400, { error: `Username already taken` });
-        })
+        });
 
         it(`responds 400 'Password must be longer than 8 characters' when empty password`, () => {
             const userShortPassword = {
                 username: 'test username',
                 password: '1234567',
                 email: 'test email',
-            }
+            };
             return supertest(app)
                 .post('/api/users')
                 .send(userShortPassword)
@@ -81,26 +84,24 @@ describe('Users Endpoints', function() {
                 username: 'test username',
                 password: '*'.repeat(73),
                 email: 'test email',
-            }
-            // console.log(userLongPassword)
-            // console.log(userLongPassword.password.length)
+            };
             return supertest(app)
                 .post('/api/users')
                 .send(userLongPassword)
                 .expect(400, { error: `Password must be less than 72 characters` });
-        })
+        });
 
         it(`responds 400 error when password starts with spaces`, () => {
             const userPasswordStartsSpaces = {
                 username: 'test username',
                 password: ' 1Aa!2Bb@',
                 email: 'test email',
-            }
+            };
             return supertest(app)
                 .post('/api/users')
                 .send(userPasswordStartsSpaces)
                 .expect(400, { error: `Password must not start or end with empty spaces` });
-        })
+        });
 
         it(`responds 400 error when password ends with spaces`, () => {
             const userPasswordEndsSpaces = {

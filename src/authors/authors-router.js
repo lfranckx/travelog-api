@@ -57,9 +57,7 @@ authorsRouter
     .get((req, res) => {
         res.json(AuthorsService.serializeAuthor(res.author));
     })
-    .patch(requireAuth, jsonParser, (req, res, next) => {
-        console.log('REQ BODY', req.body);
-        
+    .patch(requireAuth, jsonParser, (req, res, next) => {        
         const { username, name, about, profile_image } = req.body;
         const authorToUpdate = { username, name, about, profile_image };
         const numberOfValues = Object.values(authorToUpdate).filter(Boolean).length;
@@ -76,7 +74,6 @@ authorsRouter
             authorToUpdate
         )
         .then(numRowsAffected => {
-            console.log('numRowsAffected', numRowsAffected);
             res.json(numRowsAffected).status(204).end();
         })
         .catch(next);

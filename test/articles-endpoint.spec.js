@@ -1,22 +1,22 @@
-const knex = require('knex')
-const app = require('../src/app')
-const helpers = require('./test-helpers')
+const knex = require('knex');
+const app = require('../src/app');
+const helpers = require('./test-helpers');
 
 describe('Articles Endpoints', function() {
-  let db
+  let db;
 
   const {
     testUsers,
     testArticles,
-  } = helpers.makeArticlesFixtures()
+  } = helpers.makeArticlesFixtures();
 
   before('make knex instance', () => {
     db = knex({
       client: 'pg',
       connection: process.env.TEST_DATABASE_URL,
-    })
-    app.set('db', db)
-  })
+    });
+    app.set('db', db);
+  });
 
   after('disconnect from db', () => db.destroy())
 
@@ -29,9 +29,9 @@ describe('Articles Endpoints', function() {
       it(`responds with 200 and an empty list`, () => {
         return supertest(app)
           .get('/api/articles')
-          .expect(200, [])
-      })
-    })
+          .expect(200, []);
+      });
+    });
 
     context('Given there are articles in the database', () => {
       beforeEach('insert articles', () =>
@@ -40,7 +40,7 @@ describe('Articles Endpoints', function() {
           testUsers,
           testArticles,
         )
-      )
+      );
 
       it('responds with 200 and all of the articles', () => {
         const expectedArticles = testArticles.map(article =>
@@ -48,27 +48,27 @@ describe('Articles Endpoints', function() {
             testUsers,
             article,
           )
-        )
+        );
         return supertest(app)
           .get('/api/articles')
-          .expect(200, expectedArticles)
-      })
-    })
+          .expect(200, expectedArticles);
+      });
+    });
 
     context(`Given an XSS attack Article`, () => {
-      const testUser = helpers.makeUsersArray()[1]
+      const testUser = helpers.makeUsersArray()[1];
       const {
         maliciousArticle,
         expectedArticle,
-      } = helpers.makeMaliciousArticle(testUser)
+      } = helpers.makeMaliciousArticle(testUser);
 
       beforeEach('insert malicious article', () => {
         return helpers.seedMaliciousArticle(
           db,
           testUser,
           maliciousArticle,
-        )
-      })
+        );
+      });
 
       it('removes XSS attack content', () => {
         return supertest(app)
@@ -77,25 +77,25 @@ describe('Articles Endpoints', function() {
           .expect(res => {
             expect(res.body[0].title).to.eql(expectedArticle.title)
             expect(res.body[0].content).to.eql(expectedArticle.content)
-          })
-      })
-    })
-  })
+          });
+      });
+    });
+  });
 
   describe(`GET /api/articles/:article_id`, () => {
     context(`Given no articles`, () => {
       beforeEach(() =>
         helpers.seedUsers(db, testUsers)
-      )
+      );
 
       it(`responds with 404`, () => {
-        const articleId = 123456
+        const articleId = 123456;
         return supertest(app)
           .get(`/api/articles/${articleId}`)
           .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
-          .expect(404, { error: `Article doesn't exist` })
-      })
-    })
+          .expect(404, { error: `Article doesn't exist` });
+      });
+    });
 
     context('Given there are articles in the database', () => {
       beforeEach('insert articles', () =>
@@ -104,36 +104,36 @@ describe('Articles Endpoints', function() {
           testUsers,
           testArticles,
         )
-      )
+      );
 
       it('responds with 200 and the specified article', () => {
-        const articleId = 2
+        const articleId = 2;
         const expectedArticle = helpers.makeExpectedArticle(
           testUsers,
           testArticles[articleId - 1],
-        )
+        );
 
         return supertest(app)
           .get(`/api/articles/${articleId}`)
           .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
           .expect(200, expectedArticle)
-      })
-    })
+      });
+    });
 
     context(`Given an XSS attack article`, () => {
-      const testUser = helpers.makeUsersArray()[1]
+      const testUser = helpers.makeUsersArray()[1];
       const {
         maliciousArticle,
         expectedArticle,
-      } = helpers.makeMaliciousArticle(testUser)
+      } = helpers.makeMaliciousArticle(testUser);
 
       beforeEach('insert malicious Article', () => {
         return helpers.seedMaliciousArticle(
           db,
           testUser,
           maliciousArticle,
-        )
-      })
+        );
+      });
 
       it('removes XSS attack content', () => {
         return supertest(app)
@@ -143,16 +143,16 @@ describe('Articles Endpoints', function() {
           .expect(res => {
             expect(res.body.title).to.eql(expectedArticle.title)
             expect(res.body.content).to.eql(expectedArticle.content)
-          })
-      })
-    })
-  })
+          });
+      });
+    });
+  });
 
   describe(`GET /api/articles/:Article_id/reviews`, () => {
     context(`Given no articles`, () => {
       beforeEach(() =>
         helpers.seedUsers(db, testUsers)
-      )
+      );
 
       it(`responds with 404`, () => {
         const articleId = 123456
@@ -160,8 +160,8 @@ describe('Articles Endpoints', function() {
           .get(`/api/articles/${articleId}/reviews`)
           .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
           .expect(404, { error: `Article doesn't exist` })
-      })
-    })
+      });
+    });
 
     context('Given there are reviews for Article in the database', () => {
       beforeEach('insert articles', () =>
@@ -170,19 +170,19 @@ describe('Articles Endpoints', function() {
           testUsers,
           testArticles,
         )
-      )
+      );
 
       it('responds with 200 and the specified reviews', () => {
         const articleId = 1
         const expectedReviews = helpers.makeExpectedArticleReviews(
           testUsers, articleId
-        )
+        );
 
         return supertest(app)
           .get(`/api/articles/${articleId}/reviews`)
           .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
           .expect(200, expectedReviews)
-      })
-    })
-  })
-})
+      });
+    });
+  });
+});

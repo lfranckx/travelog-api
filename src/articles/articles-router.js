@@ -18,7 +18,6 @@ articlesRouter.route('/')
         const { title, description, body, author, username, image_url, profile_image } = req.body;
         const newArticle = { title, description, body, author, username, image_url, profile_image };
         newArticle.user_id = req.user.id;
-        console.log('newArticle', newArticle);
         for (const [key, value] of Object.entries(newArticle))
             if (value == null)
                     return res.status(400).json({
@@ -63,9 +62,7 @@ articlesRouter.route('/:article_id')
         })
         .catch(next);
     })
-    .delete(requireAuth, jsonParser, (req, res, next) => {
-        console.log('REQ.PARAMS', req.params);
-        
+    .delete(requireAuth, jsonParser, (req, res, next) => {        
         ArticlesService.deleteArticle(
             req.app.get('db'),
             req.params.article_id

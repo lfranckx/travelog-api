@@ -1,3 +1,6 @@
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 function makeUsersArray() {
     return [
         {
@@ -5,9 +8,9 @@ function makeUsersArray() {
             username: 'test-user1', 
             password: 'test-user1', 
             email: 'test-user1@gmail.com',
-            first_name: "",
-            last_name: "",
-            profile_image: "",
+            first_name: "sum",
+            last_name: "one",
+            profile_image: "http://placehold.it/500x500",
             date_created: '2029-01-22T16:28:32.615Z',
         },
         {
@@ -15,9 +18,9 @@ function makeUsersArray() {
             username: 'test-user2', 
             password: 'test-user2', 
             email: 'test-user2@gmail.com',
-            first_name: "",
-            last_name: "",
-            profile_image: "",
+            first_name: "zeds",
+            last_name: "dead",
+            profile_image: "http://placehold.it/500x500",
             date_created: '2029-01-22T16:28:32.615Z',
         },
         {
@@ -25,15 +28,15 @@ function makeUsersArray() {
             username: 'test-user3', 
             password: 'test-user3', 
             email: 'test-user3@gmail.com',
-            first_name: "",
-            last_name: "",
-            profile_image: "",
+            first_name: "buddy",
+            last_name: "guy",
+            profile_image: "http://placehold.it/500x500",
             date_created: '2029-01-22T16:28:32.615Z',
         },
     ];
 }
 
-function makeArticlesArray(articles) {
+function makeArticlesArray(users) {
     return [
         {
             id: 51,
@@ -71,6 +74,61 @@ function makeArticlesArray(articles) {
     ];
 }
 
+function makeAuthorsArray() {
+    return [    
+        {
+            username: 'user1',
+            name: 'zed dead',
+            about: 'about this author',
+            profile_image: 'http://placehold.it/500x500'
+        },
+        {
+            username: 'user2',
+            name: 'bill may',
+            about: 'about this author',
+            profile_image: 'http://placehold.it/500x500'
+        },
+        {
+            username: 'user3',
+            name: 'buddy guy',
+            about: 'about this author',
+            profile_image: 'http://placehold.it/500x500'
+        }
+    ];
+}
+
+function makeCommentsArray(author, articles) {
+    return [
+        {
+            id: 1,
+            comment: 'hey this is a comment',
+            username: 'user1',
+            author_name: 'zed dead',
+            profile_image: 'http://placehold.it/500x500',
+            article_id: 1,
+            date_created: '2029-01-22T16:28:32.615Z'
+        },
+        {
+            id: 2,
+            comment: 'hey this is a comment',
+            username: 'user2',
+            author_name: 'billy bob',
+            profile_image: 'http://placehold.it/500x500',
+            article_id: 2,
+            date_created: '2029-01-22T16:28:32.615Z'
+        },
+        {
+            id: 3,
+            comment: 'hey this is a comment',
+            username: 'user3',
+            author_name: 'billy bob',
+            profile_image: 'http://placehold.it/500x500',
+            article_id: 3,
+            date_created: '2029-01-22T16:28:32.615Z'
+        }
+    ]
+}
+
 function makeExpectedArticle(users, article) {
     const user = users.find(
         user => user.id === article.user_id
@@ -97,6 +155,31 @@ function makeExpectedArticle(users, article) {
     };
 }
 
+function makeMaliciousArticle(user) {
+    const maliciousArticle = {
+        id: 911,
+        title: 'Naughty naughty very naughty <script>alert("xss");</script>',
+        description: 'Very naughty<script>alert("xss");</script>',
+        body: 'Naughty naughty very naughty <script>alert("xss");</script>',
+        author: 'Naughty author<script>alert("xss");</script>',
+        image_url: '<img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong>',
+        profile_image: '<img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong>',
+        date_created: new Date().toISOString(),
+        user_id: user.id,
+        content: `Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
+    };
+
+    const expectedArticle = {
+        ...makeExpectedArticle([user], maliciousArticle),
+        title: 'Naughty naughty very naughty <script>alert("xss");</script>',
+        description: 'Very naughty<script>alert("xss");</script>',
+        body: 'Naughty naughty very naughty <script>alert("xss");</script>',
+        author: 'Naughty author<script>alert("xss");</script>',
+        image_url: '<img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong>',
+        profile_image: '<img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong>',
+    }
+}
+
 function makeArticlesFixtures() {
     const testUsers = makeUsersArray();
     const testArticles = makeArticlesArray(testUsers);
@@ -109,6 +192,7 @@ function cleanTables(db) {
             articles,
             users,
             comments,
+            authors,
             RESTART IDENTITY CASCADE`
     );
 }
@@ -141,6 +225,15 @@ function seedArticlesTables(db, users) {
     });
 }
 
+function seedMaliciousArticle(db, user, article) {
+    return seedUsers(db, [user])
+    .then(() =>
+      db
+        .into('articles')
+        .insert([article])
+    );
+}
+
 function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
     const token = jwt.sign({ user_id: user.id }, secret, {
         subject: user.user_name,
@@ -153,10 +246,13 @@ module.exports = {
     makeUsersArray,
     makeArticlesArray,
     makeExpectedArticle,
-  
     makeArticlesFixtures,
+    makeAuthorsArray,
+    makeCommentsArray,
+    makeMaliciousArticle,
     cleanTables,
     seedArticlesTables,
+    seedMaliciousArticle,
     makeAuthHeader,
     seedUsers
-};  
+}  

@@ -52,34 +52,5 @@ usersRouter
             .catch(next);
         
     });
-
-// usersRouter
-//     .route('/:username')
-//     .all(requireAuth)
-//     .all(checkUsernameExists)
-//     .get((req, res) => {
-//         res.json(UsersService.serializeUser(res.user));
-//     });
-
-// async/await syntax for promises
-// async function checkUsernameExists(req, res, next) {
-//     try {
-//         console.log('req.params', req.params);
-//         const user = await UsersService.getByUsername(
-//             req.app.get('db'),
-//             req.params.username
-//         );
-
-//         if (!user)
-//             return res.status(404).json({
-//                 error: `User does not exist`
-//             });
-
-//             res.user = user;
-//             next();
-//     } catch (error) {
-//         next(error);
-//     }
-// }
-
+    
 module.exports = usersRouter;
