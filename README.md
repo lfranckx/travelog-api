@@ -58,16 +58,16 @@ Headers: {
 Response Body:
 [
     {
-        'id': 1,
-        'title': 'Vagabonding',
-        'description': 'Favorite Quotes',
-        'body': 'This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.',
-        'author': 'Jack Kerouac',
-        'username': 'user1',
-        'image_url': 'https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404',
-        'profile_image': 'https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516',
-        'date': '2020-05-18 00:00:00',
-        'user_id': 1
+        "id": 1,
+        "title": "Vagabonding",
+        "description": "Favorite Quotes",
+        "body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
+        "author": "Jack Kerouac",
+        "username": "user1",
+        "image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
+        "profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
+        "date": "2020-05-18 00:00:00",
+        "user_id": 1
     }
 ]
 
