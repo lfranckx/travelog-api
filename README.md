@@ -36,12 +36,14 @@ https://still-lake-35765.herokuapp.com/api
 Method: 'POST'
 
 Request Body:
+
 {
 	"username": "user1",
 	"user_password": "User1234!"
 }
 
 Response Body:
+
 {
     "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 }
@@ -52,7 +54,8 @@ https://still-lake-35765.herokuapp.com/api/api/articles/user/:username
 
 Method: "GET"
 
-Headers: {
+Headers: 
+{
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 }
 Response Body:
@@ -73,7 +76,8 @@ Response Body:
 
 Authors Endpoint - GET by username
 https://still-lake-35765.herokuapp.com/api/authors/:chickasuave
-Headers: {
+Headers: 
+{
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 }
 Response Body:
@@ -89,7 +93,8 @@ Response Body:
 
 Comments Endpoint - POST
 https://still-lake-35765.herokuapp.com/api/comments
-Headers: {
+Headers: 
+{
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 }
 Response Body:
@@ -106,16 +111,18 @@ Response Body:
 ]
 
 UPLOAD ENDPOINT:
-https://warm-anchorage-60574.herokuapp.com/api/upload
+https://still-lake-35765.herokuapp.com/api/upload
 
 Method: "POST"
 
-Headers: {
+Headers: 
+{
     "Content-Type": "application/json"
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 }
 
-Request Body: {
+Request Body: 
+{
     "image": "beach.png"
 }
 Response Body:
@@ -129,18 +136,21 @@ https://warm-anchorage-60574.herokuapp.com/api/users
 
 Method: "POST"
 
-Headers: {
+Headers: 
+{
     "Content-Type": "application/json"
 }
 
-Body: {
+Body: 
+{
     "email": "testemail@gmail.com",
     "username": "TestUser",
     "user_password": "Test1234!",
     "first_name": "Jack",
     "last_name": "K",
 }
-Response Body: {
+Response Body: 
+{
     "id": 14,
     "username": "TestUser",
     "user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
