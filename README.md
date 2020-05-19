@@ -132,7 +132,7 @@ Response Body:
 }
 
 USERS ENDPOINT:
-https://warm-anchorage-60574.herokuapp.com/api/users
+https://still-lake-35765.herokuapp.com/api/users
 
 Method: "POST"
 
