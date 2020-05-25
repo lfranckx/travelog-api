@@ -143,7 +143,7 @@ Body: <br>
 "user_password": "Test1234!",<br>
 "first_name": "Jack",<br>
 "last_name": "K",<br>
-<br>}<br>
+}<br>
 Response Body: <br>
 {<br>
 "id": 14,<br>
@@ -153,7 +153,7 @@ Response Body: <br>
 "first_name": "Jack",<br>
 "last_name": "K",<br>
 "date_created": "2020-04-12T04:01:32.911Z"<br>
-<br>}<br>
+}<br>
 
 ============================================================
 
