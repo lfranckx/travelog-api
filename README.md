@@ -25,7 +25,7 @@ The endpoint checks the file type ensuring that it is a JPEG, JPG, PNG, or GIF o
 
 users: Endpoint for storing and accessing all of the data for each user.  It checks the database for current usernames existing in the database ensuring no duplicate usernames are made. It validates that passwords meet certain parameters such as length and special characters and hashes them using bcryptjs.    
 
-============================================================
+<div style="border-bottom: solid, 1px, lightgrey" >
 
 ENDPOINT DOCUMENTATION:
 
@@ -35,25 +35,25 @@ https://still-lake-35765.herokuapp.com/api
 
 Method: 'POST'
 
-Request Body:
+Request Body: <br>
 
 {
-	"username": "user1",
-	"user_password": "User1234!"
-}
+<br>	"username": "user1",
+<br>	"user_password": "User1234!"
+<br>}
+<br>
+Response Body:<br>
 
-Response Body:
-
-{
+{<br>
     "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
-}
+<br>}
 
-Articles ENDPOINT - GET by username
-
+Articles ENDPOINT - GET by username<br>
+<br>
 https://still-lake-35765.herokuapp.com/api/api/articles/user/:username
-
+<br>
 Method: "GET"
-
+<br>
 Headers: 
 {
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
