@@ -36,14 +36,14 @@ Method: 'POST'
 Request Body:
 <br>
 {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "User1234!"
+<br>"username": "user1",
+<br>"user_password": "User1234!"
 <br>}
 <br>
 Response Body:
 <br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+"authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 
 ### Articles ENDPOINT - GET by username
@@ -52,22 +52,22 @@ https://still-lake-35765.herokuapp.com/api/api/articles/user/:username
 Method: "GET"
 <br>
 Headers: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
-&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
+{<br>
+"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+<br>}<br>
 Response Body:<br>
 [
-{<br>
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"title": "Vagabonding",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"description": "Favorite Quotes",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"author": "Jack Kerouac",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"date": "2020-05-18 00:00:00",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"user_id": 1<br>
+{
+<br>"id": 1,
+<br>"title": "Vagabonding",
+<br>"description": "Favorite Quotes",
+<br>"body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
+<br>"author": "Jack Kerouac",
+<br>"username": "user1",
+<br>"image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
+<br>"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
+<br>"date": "2020-05-18 00:00:00",
+<br>"user_id": 1<br>
 }
 ]<br><br>
 
@@ -76,15 +76,15 @@ https://still-lake-35765.herokuapp.com/api/authors/:chickasuave
 <br>
 Headers: <br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
 {
-<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "chickasuave",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;name: "Nati Sup"
-<br>&nbsp;&nbsp;&nbsp;&nbsp;about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
-<br>&nbsp;&nbsp;&nbsp;&nbsp;profile_image: "",
-<br>&nbsp;&nbsp;&nbsp;&nbsp;date_created: "2020-05-18 15:40:43.214477"
+<br>"username": "chickasuave",
+<br>name: "Nati Sup"
+<br>about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
+<br>profile_image: "",
+<br>date_created: "2020-05-18 15:40:43.214477"
 <br>}<br>
 
 ## Comments Endpoint - POST
@@ -138,21 +138,21 @@ Headers:
 
 Body: <br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"email": "testemail@gmail.com",
-&nbsp;&nbsp;&nbsp;&nbsp;"username": "TestUser",
-&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "Test1234!",
-&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Jack",
-&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "K",
+"email": "testemail@gmail.com",
+"username": "TestUser",
+"user_password": "Test1234!",
+"first_name": "Jack",
+"last_name": "K",
 <br>}<br>
 Response Body: <br>
 {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"id": 14,
-&nbsp;&nbsp;&nbsp;&nbsp;"username": "TestUser",
-&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
-&nbsp;&nbsp;&nbsp;&nbsp;"email": "testemail@gmail.com",
-&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Jack",
-&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "K",
-&nbsp;&nbsp;&nbsp;&nbsp;"date_created": "2020-04-12T04:01:32.911Z"
+"id": 14,
+"username": "TestUser",
+"user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
+"email": "testemail@gmail.com",
+"first_name": "Jack",
+"last_name": "K",
+"date_created": "2020-04-12T04:01:32.911Z"
 <br>}<br>
 
 ============================================================
