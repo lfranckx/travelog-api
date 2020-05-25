@@ -1,4 +1,4 @@
-NAME OF APP: Toddler
+NAME OF APP: Travelog
 
 LINK TO LIVE APP: https://travelog-client.now.sh/
 
