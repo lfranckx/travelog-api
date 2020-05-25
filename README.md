@@ -56,19 +56,19 @@ Headers: <br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[<br>
-    {<br>
-        "id": 1,
-        "title": "Vagabonding",
-        "description": "Favorite Quotes",
-        "body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
-        "author": "Jack Kerouac",
-        "username": "user1",
-        "image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
-        "profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
-        "date": "2020-05-18 00:00:00",
-        "user_id": 1
-    <br>}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
+&nbsp;&nbsp;&nbsp;&nbsp;"title": "Vagabonding",
+&nbsp;&nbsp;&nbsp;&nbsp;"description": "Favorite Quotes",
+&nbsp;&nbsp;&nbsp;&nbsp;"body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
+&nbsp;&nbsp;&nbsp;&nbsp;"author": "Jack Kerouac",
+&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
+&nbsp;&nbsp;&nbsp;&nbsp;"image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
+&nbsp;&nbsp;&nbsp;&nbsp;"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
+&nbsp;&nbsp;&nbsp;&nbsp;"date": "2020-05-18 00:00:00",
+&nbsp;&nbsp;&nbsp;&nbsp;"user_id": 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
 ]<br><br>
 
 ## Authors Endpoint - GET by username
