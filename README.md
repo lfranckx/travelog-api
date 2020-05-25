@@ -71,7 +71,7 @@ Response Body:<br>
 }
 ]<br><br>
 
-## Authors Endpoint - GET by username
+### Authors Endpoint - GET by username
 https://still-lake-35765.herokuapp.com/api/authors/:chickasuave
 <br>
 Headers: <br>
@@ -87,7 +87,7 @@ Response Body:<br>
 <br>date_created: "2020-05-18 15:40:43.214477"
 <br>}<br>
 
-## Comments Endpoint - POST
+### Comments Endpoint - POST
 https://still-lake-35765.herokuapp.com/api/comments
 Headers: <br>
 {<br>
@@ -104,7 +104,7 @@ Response Body:<br>
 <br>"article_id": "2"
 <br>}<br>
 
-## UPLOAD ENDPOINT:
+### UPLOAD ENDPOINT:
 https://still-lake-35765.herokuapp.com/api/upload
 <br>
 Method: "POST"
@@ -170,7 +170,6 @@ This API allows users to login and create new profiles to sign into.  It uses JW
 * Knex
 * Treeize
 * Winston
-
 
 ## In Action:
 ### Main Page
