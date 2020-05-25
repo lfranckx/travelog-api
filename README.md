@@ -56,19 +56,19 @@ Headers: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 &nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
 Response Body:<br>
-[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
-&nbsp;&nbsp;&nbsp;&nbsp;"title": "Vagabonding",
-&nbsp;&nbsp;&nbsp;&nbsp;"description": "Favorite Quotes",
-&nbsp;&nbsp;&nbsp;&nbsp;"body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
-&nbsp;&nbsp;&nbsp;&nbsp;"author": "Jack Kerouac",
-&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
-&nbsp;&nbsp;&nbsp;&nbsp;"image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
-&nbsp;&nbsp;&nbsp;&nbsp;"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
-&nbsp;&nbsp;&nbsp;&nbsp;"date": "2020-05-18 00:00:00",
-&nbsp;&nbsp;&nbsp;&nbsp;"user_id": 1
-&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
+[
+{<br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"title": "Vagabonding",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"description": "Favorite Quotes",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"body": "This is a site for those who have any inclining towards extended travel or independence outside of the ordered world. I created this as a platform for people to share their travel experiences and make connections.",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"author": "Jack Kerouac",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/vagabonding-1589815794404",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"date": "2020-05-18 00:00:00",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"user_id": 1<br>
+}
 ]<br><br>
 
 ## Authors Endpoint - GET by username
@@ -76,16 +76,16 @@ https://still-lake-35765.herokuapp.com/api/authors/:chickasuave
 <br>
 Headers: <br>
 {<br>
-    "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+&nbsp;&nbsp;&nbsp;&nbsp;"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[{
-<br>"username": "chickasuave",
-<br>name: "Nati Sup"
-<br>about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
-<br>profile_image: "",
-<br>date_created: "2020-05-18 15:40:43.214477"
-<br>}]<br>
+{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "chickasuave",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;name: "Nati Sup"
+<br>&nbsp;&nbsp;&nbsp;&nbsp;about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
+<br>&nbsp;&nbsp;&nbsp;&nbsp;profile_image: "",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;date_created: "2020-05-18 15:40:43.214477"
+<br>}<br>
 
 ## Comments Endpoint - POST
 https://still-lake-35765.herokuapp.com/api/comments
@@ -94,7 +94,7 @@ Headers: <br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[{
+{
 <br>"id": 2,
 <br>"comment": "You have a way with words",
 <br>"username": "chickasuave",
@@ -102,7 +102,7 @@ Response Body:<br>
 <br>"profile_image": "https://travelog-files.s3-us-west-1.amazonaws.com/icons/profile.png",
 <br>"date": "2020-05-18 15:41:30.884962",
 <br>"article_id": "2"
-<br>}]<br><br>
+<br>}<br><br>
 
 ## UPLOAD ENDPOINT:
 https://still-lake-35765.herokuapp.com/api/upload
