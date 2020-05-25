@@ -3,8 +3,8 @@
 ## Link:
 https://travelog-client.now.sh/
 
-## API REPO: 
-https://github.com/lfranckx/travelog-api
+## CLIENT REPO: 
+https://github.com/lfranckx/travelog-client
 
 ## API ENDPOINT SERVICES:
 ### articles: 
