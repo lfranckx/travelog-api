@@ -43,7 +43,7 @@ Request Body:
 Response Body:
 <br>
 {<br>
-    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+&nbsp;&nbsp;&nbsp;&nbsp;"authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 
 ### Articles ENDPOINT - GET by username
@@ -79,15 +79,13 @@ Headers: <br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[<br>
-    {<br>
-        "username": "chickasuave",
-        name: "Nati Sup"
-        about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
-        profile_image: "",
-        date_created: "2020-05-18 15:40:43.214477"
-    <br>}<br>
-]<br><br>
+[{
+<br>"username": "chickasuave",
+<br>name: "Nati Sup"
+<br>about: "Extraplanetary the only home we've ever known something incredible is waiting to be known great turbulent clouds venture tendrils of gossamer clouds."
+<br>profile_image: "",
+<br>date_created: "2020-05-18 15:40:43.214477"
+<br>}]<br>
 
 ## Comments Endpoint - POST
 https://still-lake-35765.herokuapp.com/api/comments
@@ -96,17 +94,15 @@ Headers: <br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[
-    {<br>
-        "id": 2,
-        "comment": "You have a way with words",
-        "username": "chickasuave",
-        "author_name": "Nati Sup",
-        "profile_image": "https://travelog-files.s3-us-west-1.amazonaws.com/icons/profile.png",
-        "date": "2020-05-18 15:41:30.884962",
-        "article_id": "2"
-    <br>}
-]<br><br>
+[{
+<br>"id": 2,
+<br>"comment": "You have a way with words",
+<br>"username": "chickasuave",
+<br>"author_name": "Nati Sup",
+<br>"profile_image": "https://travelog-files.s3-us-west-1.amazonaws.com/icons/profile.png",
+<br>"date": "2020-05-18 15:41:30.884962",
+<br>"article_id": "2"
+<br>}]<br><br>
 
 ## UPLOAD ENDPOINT:
 https://still-lake-35765.herokuapp.com/api/upload
@@ -114,15 +110,16 @@ https://still-lake-35765.herokuapp.com/api/upload
 Method: "POST"
 <br>
 Headers: <br>
-{<br>
-    "Content-Type": "application/json"
-    "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+{
+<br>"Content-Type": "application/json"
+<br>"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 
 Request Body: <br>
-{<br>
-    "image": "beach.png"
-<br>}<br>
+{
+<br>"image": "beach.png"
+<br>
+}<br>
 Response Body:<br>
 {<br>
     "image_name": "beach-1586637059649",
