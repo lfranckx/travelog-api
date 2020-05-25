@@ -175,8 +175,6 @@ Response Body: <br>
 "date_created": "2020-04-12T04:01:32.911Z"<br>
 }<br>
 
-============================================================
-
 ## SUMMARY:
 This API allows users to login and create new profiles to sign into.  It uses JWT validation to log users in and access their information from the database using the token.  It communicates with Amazon Web Services S3 Buckets for uploading files and receiving their image url.
 
