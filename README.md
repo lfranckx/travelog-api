@@ -51,7 +51,7 @@ https://still-lake-35765.herokuapp.com/api/api/articles/user/:username
 <br>
 Method: "GET"
 <br>
-Headers: 
+Headers: <br>
 {<br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
@@ -96,7 +96,7 @@ Headers: <br>
     "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
 <br>}<br>
 Response Body:<br>
-[<br>
+[
     {<br>
         "id": 2,
         "comment": "You have a way with words",
@@ -105,7 +105,7 @@ Response Body:<br>
         "profile_image": "https://travelog-files.s3-us-west-1.amazonaws.com/icons/profile.png",
         "date": "2020-05-18 15:41:30.884962",
         "article_id": "2"
-    <br>}<br>
+    <br>}
 ]<br><br>
 
 ## UPLOAD ENDPOINT:
