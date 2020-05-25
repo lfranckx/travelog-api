@@ -52,12 +52,12 @@ https://still-lake-35765.herokuapp.com/api/api/articles/user/:username
 Method: "GET"
 <br>
 Headers: <br>
-{<br>
-    "authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
-<br>}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE1ODY2MzQ0MDUsImV4cCI6MTU4NjY0NTIwNSwic3ViIjoidXNlcjEifQ.7T7SGUcCSthyKBARYSJU2w4u_usYWMuzdhjEYDcpPXM"
+&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
 Response Body:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"id": 1,
 &nbsp;&nbsp;&nbsp;&nbsp;"title": "Vagabonding",
 &nbsp;&nbsp;&nbsp;&nbsp;"description": "Favorite Quotes",
@@ -68,7 +68,7 @@ Response Body:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"profile_image": "https://travelog-files.s3.us-west-1.amazonaws.com/4-1589815387516",
 &nbsp;&nbsp;&nbsp;&nbsp;"date": "2020-05-18 00:00:00",
 &nbsp;&nbsp;&nbsp;&nbsp;"user_id": 1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>}<br>
 ]<br><br>
 
 ## Authors Endpoint - GET by username
