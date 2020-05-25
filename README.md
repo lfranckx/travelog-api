@@ -36,8 +36,8 @@ Method: 'POST'
 Request Body:
 <br>
 {
-<br>	"username": "user1",
-<br>	"user_password": "User1234!"
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"username": "user1",
+<br>&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "User1234!"
 <br>}
 <br>
 Response Body:
@@ -141,21 +141,21 @@ Headers:
 
 Body: <br>
 {<br>
-    "email": "testemail@gmail.com",
-    "username": "TestUser",
-    "user_password": "Test1234!",
-    "first_name": "Jack",
-    "last_name": "K",
+&nbsp;&nbsp;&nbsp;&nbsp;"email": "testemail@gmail.com",
+&nbsp;&nbsp;&nbsp;&nbsp;"username": "TestUser",
+&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "Test1234!",
+&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Jack",
+&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "K",
 <br>}<br>
 Response Body: <br>
 {<br>
-    "id": 14,
-    "username": "TestUser",
-    "user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
-    "email": "testemail@gmail.com",
-    "first_name": "Jack",
-    "last_name": "K",
-    "date_created": "2020-04-12T04:01:32.911Z"
+&nbsp;&nbsp;&nbsp;&nbsp;"id": 14,
+&nbsp;&nbsp;&nbsp;&nbsp;"username": "TestUser",
+&nbsp;&nbsp;&nbsp;&nbsp;"user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
+&nbsp;&nbsp;&nbsp;&nbsp;"email": "testemail@gmail.com",
+&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Jack",
+&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "K",
+&nbsp;&nbsp;&nbsp;&nbsp;"date_created": "2020-04-12T04:01:32.911Z"
 <br>}<br>
 
 ============================================================
