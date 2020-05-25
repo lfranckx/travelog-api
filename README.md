@@ -102,7 +102,7 @@ Response Body:<br>
 <br>"profile_image": "https://travelog-files.s3-us-west-1.amazonaws.com/icons/profile.png",
 <br>"date": "2020-05-18 15:41:30.884962",
 <br>"article_id": "2"
-<br>}<br><br>
+<br>}<br>
 
 ## UPLOAD ENDPOINT:
 https://still-lake-35765.herokuapp.com/api/upload
@@ -126,33 +126,33 @@ Response Body:<br>
     "image_url": "https://travelog-files.s3.us-west-1.amazonaws.com/beach-1586637059649"
 <br>}<br>
 
-USERS ENDPOINT:<br>
+### USERS ENDPOINT:<br>
 https://still-lake-35765.herokuapp.com/api/users
 <br>
 Method: "POST"
 <br>
 Headers: 
-{<br>
-    "Content-Type": "application/json"
-<br>}<br>
+{
+<br>"Content-Type": "application/json"<br>
+}<br>
 
 Body: <br>
 {<br>
-"email": "testemail@gmail.com",
-"username": "TestUser",
-"user_password": "Test1234!",
-"first_name": "Jack",
-"last_name": "K",
+"email": "testemail@gmail.com",<br>
+"username": "TestUser",<br>
+"user_password": "Test1234!",<br>
+"first_name": "Jack",<br>
+"last_name": "K",<br>
 <br>}<br>
 Response Body: <br>
 {<br>
-"id": 14,
-"username": "TestUser",
-"user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",
-"email": "testemail@gmail.com",
-"first_name": "Jack",
-"last_name": "K",
-"date_created": "2020-04-12T04:01:32.911Z"
+"id": 14,<br>
+"username": "TestUser",<br>
+"user_password": "$2a$12$vmLS3PwtA2nNRGPQoDWzUeGuHZkiPLDcf1JRKoIhD2ObIDHiIQO5e",<br>
+"email": "testemail@gmail.com",<br>
+"first_name": "Jack",<br>
+"last_name": "K",<br>
+"date_created": "2020-04-12T04:01:32.911Z"<br>
 <br>}<br>
 
 ============================================================
